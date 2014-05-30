@@ -119,6 +119,9 @@ class DocumentationGenerator(object):
                 }
             }
 
+            if getattr(field, 'help_text', False):
+                data[name]['description'] = getattr(field, 'help_text', '')
+
         return data
 
     def _get_serializer_class(self, callback):
