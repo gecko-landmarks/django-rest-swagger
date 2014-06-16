@@ -119,8 +119,8 @@ class DocumentationGenerator(object):
                 }
             }
 
-            if getattr(field, 'help_text', False):
-                data[name]['description'] = getattr(field, 'help_text', '')
+            if hasattr(field, 'help_text'):
+                data[name]['description'] = field.help_text
 
         return data
 
